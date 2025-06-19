@@ -11,22 +11,6 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
-// Route設定の書き方
-// Route:HTTPメソッド('URL',[コントローラー名::class, 'メソッド名'])
-// ->name('ルート名');
-
-// HTTPメソッドは、GET, POST, PUT(patch), DELETEなどがあり、
-// GETはページを表示、POSTはデータを保存、PUTはデータを更新、DELETEはデータを削除するために使用されます。
-
-// URLにはドメイン以下のパスを指定します。
-
-// コントローラー名とメソッド名には、URLがリクエストされたときに実行される処理を定義した
-// コントローラーのクラス名とメソッド名を指定します。
-
-// 使用するコントローラーは、ルート設定ファイルにインポートする必要があります。
-// これにはuse宣言を用いて、コントローラーへのパスを指定します。
-
-// 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');

@@ -52,6 +52,29 @@
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
                 <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
+                    {{--
+
+                        Laravelにおいてviewはbladeというテンプレートエンジンを使用して作成します。
+                        bladeではディレクティブという構文を使用でき、if文やfor文などの条件分岐、繰り返し処理から
+                        authやguestといったユーザー認証に役立つディレクティブも使用できます。
+
+                        以下では、繰り返し処理及び、Laravelの認証機能を使用してログイン中のユーザー名を表示しています。
+
+                        @forディレクティブは、0から5までの数字をする処理を行い、表示しています。
+
+                        @authディレクティブは、ユーザーが認証（ログイン）されている場合にのみ実行されます。
+                        Auth::user()->nameを使用して、ログイン中のユーザーの名前を取得、表示しています。
+
+                        h1タグ内の{{}}はエスケープ処理（文字列変換し出力）を行い、XSS攻撃などから保護するために使用されます。
+                        XSS攻撃とは、悪意のあるスクリプトをウェブページに埋め込むことで、ユーザーのブラウザで実行させる攻撃手法です。
+
+                    --}}
+                    @auth
+                        @for ($i=0;$i<=5;$i++)
+                            {{$i}},
+                        @endfor
+                        <h1>{{Auth::user()->name}}がログイン中です！</h1>
+                    @endauth
                     <h1 class="mb-1 font-medium">Let's get started</h1>
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel has an incredibly rich ecosystem. <br>We suggest starting with the following.</p>
                     <ul class="flex flex-col mb-4 lg:mb-6">
