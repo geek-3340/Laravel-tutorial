@@ -70,10 +70,10 @@
 
                     --}}
                     @auth
+                        <h1>{{Auth::user()->name}}がログイン中です！</h1>
                         @for ($i=0;$i<=5;$i++)
                             {{$i}},
                         @endfor
-                        <h1>{{Auth::user()->name}}がログイン中です！</h1>
                     @endauth
                     <h1 class="mb-1 font-medium">Let's get started</h1>
                     <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel has an incredibly rich ecosystem. <br>We suggest starting with the following.</p>
