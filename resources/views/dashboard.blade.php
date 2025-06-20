@@ -20,9 +20,13 @@
                         </x-primary-button>
                         のように、コンポーネント名を指定し、その中にボタンのテキストを記述します。
                     --}}
-                    <x-primary-button>
-                        PUSH!!
-                    </x-primary-button>
+                    <div class="d-flex">
+                        <x-application-logo>
+                        </x-application-logo>
+                        <x-primary-button>
+                            PUSH!!
+                        </x-primary-button>
+                    </div>
                 </div>
             </div>
         </div>

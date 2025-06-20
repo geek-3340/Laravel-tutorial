@@ -1,5 +1,5 @@
-<!-- このコントローラーは、web.php内でルート設定されています。 -->
 <?php
+// このコントローラーは、web.php内でルート設定されています。
 
 namespace App\Http\Controllers;
 
